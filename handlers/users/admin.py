@@ -6,7 +6,7 @@ from data.config import ADMINS
 from loader import dp, db, bot
 
 @dp.message_handler(text="/allusers", user_id=ADMINS)
-async def get_all_users(message: types.Message):
+async def all_users(message: types.Message):
     users = db.select_all_users()
     await message.answer(users)
 
